@@ -1,0 +1,98 @@
+body {
+    background-color: #f8f9fa;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #212529;
+    padding-top: 2rem;
+    flex-shrink: 0;
+}
+
+.sidebar a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    padding: 12px 20px;
+    font-weight: 500;
+}
+
+.sidebar a:hover {
+    background-color: #343a40;
+    border-left: 4px solid #0d6efd;
+}
+
+.sidebar a.active {
+    background-color: #0d6efd;
+    font-weight: bold;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-section {
+    width: 100%;
+    max-width: 900px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 40px 30px;
+}
+
+.info-card {
+    border-radius: 12px;
+    padding: 20px 25px;
+    margin-bottom: 20px;
+    background-color: #f1f3f5;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.info-card h4 {
+    margin-bottom: 5px;
+}
+
+.info-card p {
+    margin-bottom: 10px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-custom {
+    min-width: 120px;
+}
+
+.btn-fill {
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.btn-fill:hover {
+    background-color: transparent;
+}
+
+.btn-primary:hover {
+    color: #0d6efd;
+}
+
+.btn-success:hover {
+    color: #198754;
+}
+
+.btn-danger:hover {
+    color: #dc3545;
+}
+
+.btn-outline {
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}

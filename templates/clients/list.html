@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Vendas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+</head>
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="m-0">👤 Lista de Clientes</h2>
+        <a href="/clients/create" class="btn btn-primary">➕ Novo Cliente</a>
+    </div>
+
+    {% if clients %}
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th style="width: 9%;">ID</th>
+                        <th style="width: 35%;">Nome</th>
+                        <th style="width: 40%;">Endereço</th>
+                        <th style="width: 16%;">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for client in clients %}
+                    <tr>
+                        <td>{{ client.idclient }}</td>
+                        <td>{{ client.name }}</td>
+                        <td>{{ client.address }}</td>
+                        <td class="d-flex justify-content-around">
+                            <a href="/clients/edit/{{ client.idclient }}" class="btn btn-sm btn-warning">✏️ Editar</a>
+                            <a href="/clients/delete/{{ client.idclient }}" class="btn btn-sm btn-danger">🗑️ Excluir</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p class="text-muted">Nenhum cliente cadastrado.</p>
+    {% endif %}
+</div>
+
+{% endblock %}
+</html>

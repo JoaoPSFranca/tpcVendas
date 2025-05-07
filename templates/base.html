@@ -1,0 +1,16 @@
+<body>
+    <div class="sidebar">
+        <h5 class="text-center mb-4">
+            <a href="/" class="menu-link">📋 Menu</a>
+        </h5>
+
+        <a href="/clients" class="{% if active_page == 'clients' %}active{% endif %}">👤 Clientes</a>
+        <a href="/products" class="{% if active_page == 'products' %}active{% endif %}">📦 Produtos</a>
+        <a href="/sales" class="{% if active_page == 'sales' %}active{% endif %}">🛒 Vendas</a>
+    </div>
+
+    <div class="main-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
